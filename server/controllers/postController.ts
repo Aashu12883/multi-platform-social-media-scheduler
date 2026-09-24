@@ -12,7 +12,7 @@ const pollLeonardoJob = async (generationId: string, apiKey: string) : Promise<s
     const maxRetries = 20;
     const delay = 5000;
 
-    for(let i = 0; i < maxRetries; i++){
+    for(let i = 0; i < maxRetries; i++){ 
         try {
            const response = await axios.get(`https://cloud.leonardo.ai/api/rest/v1/generations/${generationId}`, {headers: {
             accept: "application/json", authorization: `Bearer ${apiKey}`
@@ -177,7 +177,7 @@ export const schedulePost = async (req: AuthRequest, res: Response): Promise<voi
         let mediaUrl: string | undefined = req.body.mediaUrl;
         let mediaType: "image" | "video" | undefined = req.body.mediaType;
 
-        if(req.file){
+        if( req.file ){
             const result = await new Promise<any>((resolve, reject)=>{
                 const stream = cloudinary.uploader.upload_stream({resource_type: "auto", folder: "social-scheduler"}, (error, result)=>{
                     if(error) reject(error);
