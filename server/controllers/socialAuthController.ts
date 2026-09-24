@@ -114,7 +114,8 @@ export const syncAccounts = async (req: AuthRequest, res: Response) : Promise<vo
             syncedAccounts.push(account)
         }
         res.json(syncedAccounts)
-    } catch (error: any) {
+    }
+    catch (error: any) {
         res.status(500).json({ message: error?.message || "Server error" });
     }
 }
