@@ -5,6 +5,7 @@ const generationSchema = new mongoose.Schema({
     prompt: { type: String, required: true },
     content: { type: String, required: true },
     mediaUrl: { type: String },
+    
     mediaType: { type: String, enum: ["image", "video"] },
     tone: { type: String },
 }, {timestamps: true})
