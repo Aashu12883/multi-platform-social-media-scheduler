@@ -186,6 +186,3 @@ All endpoints other than registration/login require a bearer token.
 - Configure CORS restrictively before production; the current API enables CORS without an origin allowlist.
 - Use HTTPS in production, especially because the client stores the JWT in `localStorage`.
 
-## License
-
-No project-level license file is currently included. Add one before distributing or open-sourcing the project.
